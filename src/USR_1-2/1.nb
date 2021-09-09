@@ -1,0 +1,300 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9427,        292]
+NotebookOptionsPosition[      8471,        267]
+NotebookOutlinePosition[      8936,        285]
+CellTagsIndexPosition[      8893,        282]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", " ", "=", " ", 
+    RowBox[{"p", " ", "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"k", "*", 
+        RowBox[{"t", "/", "b"}]}], ")"}], 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", 
+        RowBox[{"(", 
+         RowBox[{"b", "/", "v"}], ")"}]}], "]"}]}], "+", 
+     RowBox[{"(", 
+      RowBox[{"a", "/", 
+       RowBox[{"v", "^", "2"}]}], ")"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dfdv", " ", "=", " ", 
+   RowBox[{"D", "[", 
+    RowBox[{"f", ",", "v"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dfdp", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"f", ",", "p"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dfdt", " ", "=", " ", 
+    RowBox[{"D", "[", 
+     RowBox[{"f", ",", " ", "t"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dpdv", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"-", "dfdv"}], "/", "dfdp"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dtdv", "=", 
+    RowBox[{"FullSimplify", "[", 
+     RowBox[{
+      RowBox[{"-", "dfdv"}], "/", "dfdt"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<dpdv = \>\"", ",", " ", "dpdv"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<dtdv = \>\"", ",", " ", "dtdv"}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"d2pdv2", " ", "=", " ", 
+   RowBox[{"FullSimplify", "[", " ", 
+    RowBox[{"D", "[", 
+     RowBox[{"dpdv", ",", " ", "v"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"d2tdv2", " ", "=", " ", 
+    RowBox[{"FullSimplify", "[", " ", 
+     RowBox[{"D", "[", 
+      RowBox[{"dtdv", ",", " ", "t"}], "]"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Print", "[", "d2pdv2", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fc", "=", 
+    RowBox[{"f", "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"p", "->", "pc"}], ",", 
+       RowBox[{"v", "->", "vc"}], ",", 
+       RowBox[{"t", "->", "tc"}]}], "}"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dpdvc", " ", "=", " ", 
+   RowBox[{"FullSimplify", "[", " ", 
+    RowBox[{"dpdv", " ", "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"p", "->", "pc"}], ",", 
+       RowBox[{"v", "->", "vc"}], ",", 
+       RowBox[{"t", "->", "tc"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"d2pdv2c", " ", "=", " ", 
+    RowBox[{"FullSimplify", "[", " ", 
+     RowBox[{"d2pdv2", " ", "/.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"p", "->", "pc"}], ",", 
+        RowBox[{"v", "->", "vc"}], ",", 
+        RowBox[{"t", "->", "tc"}]}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<dpdvc = \>\"", ",", " ", "dpdvc"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<d2pdv2c = \>\"", ",", " ", "d2pdv2c"}], "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.8401585479078054`*^9, 3.8401586390118275`*^9}, {
+  3.840158671337021*^9, 3.840158782814054*^9}, {3.8401588360015907`*^9, 
+  3.840158863372113*^9}, {3.8401589030957437`*^9, 3.840158922309862*^9}, {
+  3.8401589635853777`*^9, 3.8401589814837465`*^9}, {3.8401590129801245`*^9, 
+  3.8401590875221634`*^9}, {3.840159138728526*^9, 3.8401591592299757`*^9}, {
+  3.840159230639594*^9, 3.840159264340495*^9}, {3.8401601617136927`*^9, 
+  3.840160221810705*^9}, {3.840160282843622*^9, 
+  3.84016036887953*^9}},ExpressionUUID->"33ba1395-6421-484e-a93a-\
+c5b611589886"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"dpdv = \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"2", " ", "a"}], "+", 
+     FractionBox[
+      RowBox[{"k", " ", "t", " ", 
+       SuperscriptBox["v", "2"]}], 
+      RowBox[{"b", "-", "v"}]]}], 
+    SuperscriptBox["v", "3"]]}],
+  SequenceForm[
+  "dpdv = ", $CellContext`v^(-3) (
+    2 $CellContext`a + $CellContext`k $CellContext`t ($CellContext`b - \
+$CellContext`v)^(-1) $CellContext`v^2)],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.840160297674822*^9, 3.8401603424278917`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[250]:=",ExpressionUUID->"1040f283-0f9d-419f-885b-b4fac0be5e96"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"dtdv = \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    RowBox[{"b", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"2", " ", "a", " ", 
+        RowBox[{"(", 
+         RowBox[{"b", "-", "v"}], ")"}]}], "+", 
+       RowBox[{"k", " ", "t", " ", 
+        SuperscriptBox["v", "2"]}]}], ")"}]}], 
+    RowBox[{"k", " ", 
+     RowBox[{"(", 
+      RowBox[{"b", "-", "v"}], ")"}], " ", 
+     SuperscriptBox["v", "3"], " ", 
+     RowBox[{"Log", "[", 
+      RowBox[{"1", "-", 
+       FractionBox["b", "v"]}], "]"}]}]]}],
+  SequenceForm[
+  "dtdv = ", $CellContext`b $CellContext`k^(-1) ($CellContext`b - \
+$CellContext`v)^(-1) $CellContext`v^(-3) (
+    2 $CellContext`a ($CellContext`b - $CellContext`v) + $CellContext`k \
+$CellContext`t $CellContext`v^2)/Log[1 - $CellContext`b/$CellContext`v]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.840160297674822*^9, 3.8401603424278917`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[250]:=",ExpressionUUID->"6fcf92e9-9052-476a-a6e1-4daa1b793a60"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{"6", " ", "a"}], 
+    SuperscriptBox["v", "4"]]}], "-", 
+  FractionBox[
+   RowBox[{"k", " ", "t", " ", 
+    RowBox[{"(", 
+     RowBox[{"b", "-", 
+      RowBox[{"2", " ", "v"}]}], ")"}]}], 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"b", "-", "v"}], ")"}], "2"], " ", 
+    SuperscriptBox["v", "2"]}]]}]], "Print",
+ CellChangeTimes->{{3.840160297674822*^9, 3.840160342435887*^9}},
+ CellLabel->
+  "During evaluation of \
+In[250]:=",ExpressionUUID->"594b2da8-5847-45af-b280-d2b611600a98"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"dpdvc = \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"2", " ", "a"}], "+", 
+     FractionBox[
+      RowBox[{"k", " ", "tc", " ", 
+       SuperscriptBox["vc", "2"]}], 
+      RowBox[{"b", "-", "vc"}]]}], 
+    SuperscriptBox["vc", "3"]]}],
+  SequenceForm[
+  "dpdvc = ", $CellContext`vc^(-3) (
+    2 $CellContext`a + $CellContext`k $CellContext`tc ($CellContext`b - \
+$CellContext`vc)^(-1) $CellContext`vc^2)],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.840160297674822*^9, 3.840160342499861*^9}},
+ CellLabel->
+  "During evaluation of \
+In[250]:=",ExpressionUUID->"ee712979-cefc-4414-9dc3-29cad62865dd"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"d2pdv2c = \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"6", " ", "a"}], 
+      SuperscriptBox["vc", "4"]]}], "-", 
+    FractionBox[
+     RowBox[{"k", " ", "tc", " ", 
+      RowBox[{"(", 
+       RowBox[{"b", "-", 
+        RowBox[{"2", " ", "vc"}]}], ")"}]}], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"b", "-", "vc"}], ")"}], "2"], " ", 
+      SuperscriptBox["vc", "2"]}]]}]}],
+  SequenceForm[
+  "d2pdv2c = ", (-6) $CellContext`a $CellContext`vc^(-4) - $CellContext`k \
+$CellContext`tc ($CellContext`b - 
+    2 $CellContext`vc) ($CellContext`b - $CellContext`vc)^(-2) \
+$CellContext`vc^(-2)],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.840160297674822*^9, 3.840160342499861*^9}},
+ CellLabel->
+  "During evaluation of \
+In[250]:=",ExpressionUUID->"5797b354-b0f9-405f-8fba-e46379a5c6b9"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1152., 585.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+Magnification:>1. Inherited,
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (May 11, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"07f31906-17e7-4959-b85d-14c58fbff162"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3929, 117, 466, "Input",ExpressionUUID->"33ba1395-6421-484e-a93a-c5b611589886"],
+Cell[CellGroupData[{
+Cell[4534, 143, 675, 19, 50, "Print",ExpressionUUID->"1040f283-0f9d-419f-885b-b4fac0be5e96"],
+Cell[5212, 164, 1045, 28, 53, "Print",ExpressionUUID->"6fcf92e9-9052-476a-a6e1-4daa1b793a60"],
+Cell[6260, 194, 574, 19, 42, "Print",ExpressionUUID->"594b2da8-5847-45af-b280-d2b611600a98"],
+Cell[6837, 215, 683, 19, 50, "Print",ExpressionUUID->"ee712979-cefc-4414-9dc3-29cad62865dd"],
+Cell[7523, 236, 920, 27, 42, "Print",ExpressionUUID->"5797b354-b0f9-405f-8fba-e46379a5c6b9"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
